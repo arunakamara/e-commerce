@@ -1,0 +1,39 @@
+
+.check-out {
+    min-height: 100vh;
+    background-color: #fff;;
+    
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 8rem;
+}
+
+.check-out p {
+    color: #000;
+
+}
+
+
+
+ul, li {
+    list-style-type: none;
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: Verdana;
+}
+
+.amount {
+    color: red;
+    font-weight: bold;
+}
+
+.thanks {
+    font-size: 2rem;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:darksalmon;
+}

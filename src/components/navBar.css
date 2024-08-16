@@ -1,0 +1,19 @@
+nav {
+    margin-top: 0;
+    background-color:cornflowerblue;
+    position: sticky;
+    top: 0rem;
+
+}
+
+#brand.navbar-brand {
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+
+
+
+   
