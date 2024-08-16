@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItem, increaseQuantity, decreaseQuantity } from "./CartSlice";
+import { toast } from "react-toastify";
 import withNavigateHook from "./hoc/withNavigateHook";
 import "./Cart.css";
 
@@ -40,7 +41,15 @@ const CartItem = (props) => {
   };
 
   const handleCheckoutShopping = (e) => {
-    props.navigation("/e-commerce/check-out");
+    e.preventDefault();
+    console.log(cart.length);
+    if (cart.length === 0)
+      return toast(
+        <strong style={{ fontSize: "1.5rem" }}>Your Cart is empty</strong>
+      );
+    else {
+      props.navigation("/e-commerce/check-out");
+    }
   };
 
   return (
