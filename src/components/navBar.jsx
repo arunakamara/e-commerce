@@ -22,9 +22,9 @@ function NavBar(props) {
           <NavLink  className="nav-link" to="/">
             Home
           </NavLink>
-         {/* <NavLink  className="nav-link" to="/product-list">
+         <NavLink  className="nav-link" to="/product-list">
             ProductList
-          </NavLink> */}
+          </NavLink>
           <NavLink  className="nav-link" to="/login"> Login</NavLink>
           <NavLink  className="nav-link" to="/register">
             Register

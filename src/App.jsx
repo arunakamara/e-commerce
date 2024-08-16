@@ -12,6 +12,7 @@ function App() {
   return (
     <>
       <NavBar />
+      
       <Routes>
         <Route path="/product-list" Component={ProductList}></Route>
         <Route path="/register" Component={Register}></Route>
