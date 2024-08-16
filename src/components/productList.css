@@ -29,6 +29,10 @@ button > i.fa {
     top: 0;
 }
 
+li.selected {
+    background-color: skyblue;
+}
+
 .cart-count {
     font-size: 3rem;
     width: 8rem;

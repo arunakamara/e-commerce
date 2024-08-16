@@ -69,7 +69,7 @@ function ProductList(props) {
                 onClick={() => handleSelectedCategory(category)}
                 className={
                   category === selectedCategory
-                    ? "list-group-item active"
+                    ? "list-group-item selected"
                     : "list-group-item"
                 }
               >
