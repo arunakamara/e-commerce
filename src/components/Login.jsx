@@ -23,7 +23,7 @@ class LoginForm extends Form {
     //logic for authentication
 
     
-    this.props.navigation("/e-commerce/product-list", { replace: true });
+    this.props.navigation("/product-list", { replace: true });
   };
 
   render() {

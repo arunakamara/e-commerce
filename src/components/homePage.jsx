@@ -4,11 +4,11 @@ import "./homePage.css";
 
 function HomePage(props) {
   const handleToLogin = () => {
-    props.navigation("/e-commerce/login");
+    props.navigation("/login");
   };
 
   const handleToRegister = () => {
-    props.navigation("/e-commerce/register");
+    props.navigation("/register");
   }
   return (
     <div className="home-page">

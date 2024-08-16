@@ -16,7 +16,7 @@ const CartItem = (props) => {
 
   const handleContinueShopping = (e) => {
     e.preventDefault();
-    props.navigation("/e-commerce/product-list");
+    props.navigation("/product-list");
   };
 
   const handleIncrement = (item) => {
@@ -42,13 +42,12 @@ const CartItem = (props) => {
 
   const handleCheckoutShopping = (e) => {
     e.preventDefault();
-    console.log(cart.length);
     if (cart.length === 0)
       return toast(
         <strong style={{ fontSize: "1.5rem" }}>Your Cart is empty</strong>
       );
     else {
-      props.navigation("/e-commerce/check-out");
+      props.navigation("/check-out");
     }
   };
 

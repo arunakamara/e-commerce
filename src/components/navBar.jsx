@@ -19,17 +19,17 @@ function NavBar(props) {
         </Link>
 
         <div className="navbar-nav">
-          <NavLink className="nav-link" to="/e-commerce">
+          <NavLink className="nav-link" to="/">
             Home
           </NavLink>
-          <NavLink className="nav-link" to="/e-commerce/product-list">
+          <NavLink className="nav-link" to="/product-list">
             ProductList
           </NavLink>
-          <NavLink className="nav-link" to="/e-commerce/login">
+          <NavLink className="nav-link" to="/login">
             {" "}
             Login
           </NavLink>
-          <NavLink className="nav-link" to="/e-commerce/register">
+          <NavLink className="nav-link" to="/register">
             Register
           </NavLink>
         </div>
