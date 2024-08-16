@@ -19,7 +19,7 @@ function NavBar(props) {
         </Link>
 
         <div className="navbar-nav">
-          <NavLink  className="nav-link" to="/">
+          <NavLink  className="nav-link" to="/e-commerce">
             Home
           </NavLink>
          <NavLink  className="nav-link" to="/product-list">

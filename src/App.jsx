@@ -13,12 +13,12 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path="/product-list" Component={ProductList}></Route>
-        <Route path="/register" Component={Register}></Route>
-        <Route path="/login" Component={LoginForm}></Route>
-        <Route path="/cart" Component={Cart}></Route>
-        <Route path="/check-out" Component={CheckOut}></Route>
-        <Route path="/" Component={HomePage}></Route>
+        <Route path="/e-commerce/product-list" Component={ProductList}></Route>
+        <Route path="/e-commerce/register" Component={Register}></Route>
+        <Route path="/e-commerce/login" Component={LoginForm}></Route>
+        <Route path="/e-commerce/cart" Component={Cart}></Route>
+        <Route path="/e-commerce/check-out" Component={CheckOut}></Route>
+        <Route path="/e-commerce" Component={HomePage}></Route>
       </Routes>
     </>
   );
