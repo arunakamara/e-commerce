@@ -15,7 +15,7 @@ function NavBar(props) {
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <Link id="brand" className="navbar-brand">
-          Armafaah Shopping Point
+          Aruna's Shopping Point
         </Link>
 
         <div className="navbar-nav">

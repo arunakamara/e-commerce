@@ -1,7 +1,4 @@
 
-
-
-
 .wrapper {
     width: 100%;
     min-height: 100vh;
@@ -9,6 +6,7 @@
     background-size: cover;
 }
 .forms-wrapper {
+
     padding: 5rem;
     position: relative;
     top: calc(50% - 50rem);
@@ -17,8 +15,8 @@
 }
 
 .forms-wrapper form {
-    width: 40rem;
-    height: auto;
+    max-width: 40rem;
+    max-height: auto;
     padding: 1.5rem;
     background-color: rgba(40, 114, 108, .925);
     display: flex;
@@ -44,8 +42,8 @@ form h2 {
 }
 
 .inputs-wrapper input, button {
-    width: 30rem;
-    height: 3rem;
+    max-width: 30rem;
+    max-height: 3rem;
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
     background-color: transparent;
@@ -68,7 +66,7 @@ form h2 {
 }
 
 button.login-btn, button.signup-btn {
-    width: 20rem;
+    max-width: 20rem;
     margin: 1.5rem 0;
     background-color: #fff;
     color: cornflowerblue;

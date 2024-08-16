@@ -106,15 +106,16 @@ h2.total-cart-amount {
   button.cart-item-button-inc{
     background-color: green;
   }
-  @media (max-width: 768px) {
-    .cart-item {
+  @media screen and (max-width: 768px) {
+    div.cart-item {
       flex-direction: column; 
-      align-items: flex-start; 
+      align-items: center; 
+      text-align: center;
       width: 100%; 
     }
   
     .cart-item-image {
-      width: 100%;
+      max-width: 80%;
       height: auto; 
       margin-right: 0; 
       margin-bottom: 1rem; 
@@ -124,8 +125,11 @@ h2.total-cart-amount {
       width: 100%;
     }
   
-    .cart-item-quantity {
-      margin-top: 1rem; 
+    div.cart-item-quantity {
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      align-items: center;
     }
   }
   .cart-item {

@@ -4,16 +4,16 @@ import "./homePage.css";
 
 function HomePage(props) {
   const handleToLogin = () => {
-    props.navigation("/login");
+    props.navigation("/e-commerce/login");
   };
 
   const handleToRegister = () => {
-    props.navigation("/register");
+    props.navigation("/e-commerce/register");
   }
   return (
     <div className="home-page">
       <header>
-        <h2>Welcome to Armafaah Shopping Point</h2>
+        <h2>Welcome to Aruna's Shopping Point</h2>
       </header>
       <main className="about-us">
         <p>

@@ -15,7 +15,7 @@ const CartItem = (props) => {
 
   const handleContinueShopping = (e) => {
     e.preventDefault();
-    props.navigation("/product-list");
+    props.navigation("/e-commerce/product-list");
   };
 
   const handleIncrement = (item) => {
@@ -40,7 +40,7 @@ const CartItem = (props) => {
   };
 
   const handleCheckoutShopping = (e) => {
-    props.navigation("/check-out");
+    props.navigation("/e-commerce/check-out");
   };
 
   return (

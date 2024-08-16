@@ -27,7 +27,7 @@ function ProductList(props) {
 
   const handleCartClick = (e) => {
     e.preventDefault();
-    props.navigation("/cart");
+    props.navigation("/e-commerce/cart");
   };
 
   const handleAddToCart = (product) => {
