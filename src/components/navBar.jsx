@@ -14,19 +14,22 @@ function NavBar(props) {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <Link  id="brand" className="navbar-brand">
+        <Link id="brand" className="navbar-brand">
           Armafaah Shopping Point
         </Link>
 
         <div className="navbar-nav">
-          <NavLink  className="nav-link" to="/e-commerce">
+          <NavLink className="nav-link" to="/e-commerce">
             Home
           </NavLink>
-         <NavLink  className="nav-link" to="/product-list">
+          <NavLink className="nav-link" to="/e-commerce/product-list">
             ProductList
           </NavLink>
-          <NavLink  className="nav-link" to="/login"> Login</NavLink>
-          <NavLink  className="nav-link" to="/register">
+          <NavLink className="nav-link" to="/e-commerce/login">
+            {" "}
+            Login
+          </NavLink>
+          <NavLink className="nav-link" to="/e-commerce/register">
             Register
           </NavLink>
         </div>
