@@ -24,7 +24,7 @@ class Register extends Form {
     console.log("Registerd");
 
     //logic for authentication
-    this.props.navigation("/product-list", { replace: "true" });
+    this.props.navigation("/", { replace: "true" });
   };
 
   render() {
