@@ -48,7 +48,7 @@ function ProductList(props) {
       : products;
 
   return (
-    <div>
+    <div className="container">
       <header className="product-list-heading">
         <h1>Product Lists</h1>
         <button onClick={(e) => handleCartClick(e)} className="cart-logo">
@@ -88,7 +88,7 @@ function ProductList(props) {
         </button>
         <hr />
       </div>
-      <Footer />
+      
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 // import HomePage from "./components/homePage";
 import NavBar from "./components/navBar";
+import Footer from "./components/Footer";
 import ProductList from "./components/productList";
 import LoginForm from "./components/Login";
 import Register from "./components/Register";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/check-out" Component={CheckOut}></Route>
         <Route path="/" Component={ProductList}></Route>
       </Routes>
+      <Footer />
     </>
   );
 }

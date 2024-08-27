@@ -2,6 +2,7 @@ import React from "react";
 
 const styles = {
   backgroundColor: "#1b1b23",
+  // width: "100vw"
 };
 
 function Footer(props) {
