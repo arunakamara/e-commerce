@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategories } from "../fakeStore";
+import { setSelectedCategory } from "./categorySelectedSlice";
 import "./navBar.css";
+
 function NavBar(props) {
-  // const navLinkStyle = {
-  //   margin: '0 5px',
-  //   padding: '2px 8px',
-  //   color: 'white',
-  //   textDecoration: 'none',
-  //   backgroundColor: 'midnightblue',
-  //   border: '1px solid black',
-  //   borderRadius: '4px'
-  // }
+  const selectedCategory = useSelector(
+    (state) => state.categorySelected.selectedCategory
+  );
+  const dispatch = useDispatch();
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    setCategories(["All Category", ...getCategories()]);
+  }, []);
+
+  const handleSelectedCategory = (category) => {
+    dispatch(setSelectedCategory(category));
+  };
+
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -18,20 +27,40 @@ function NavBar(props) {
           Aruna's Shopping Point
         </Link>
 
+        <form className="d-flex" role="search">
+          <input
+            className="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button className="search-btn" type="submit"></button>
+        </form>
+
+        <div className="category">
+          {categories.map((category) => (
+            <div
+              key={category}
+              onClick={() => handleSelectedCategory(category)}
+              className={
+                category === selectedCategory
+                  ? category + " selected"
+                  : category
+              }
+            >
+              <span>{category}</span>
+            </div>
+          ))}
+        </div>
+
         <div className="navbar-nav">
-          <NavLink className="nav-link" to="/">
-            Home
-          </NavLink>
-          <NavLink className="nav-link" to="/product-list">
-            ProductList
-          </NavLink>
+         
           <NavLink className="nav-link" to="/login">
-            {" "}
-            Login
+            <i className="fa fa-sign-in">
+              <span className="lg">Login</span>
+            </i>
           </NavLink>
-          <NavLink className="nav-link" to="/register">
-            Register
-          </NavLink>
+          
         </div>
       </div>
     </nav>

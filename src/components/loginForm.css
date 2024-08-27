@@ -1,12 +1,13 @@
 
 .wrapper {
-    width: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem 1.2rem;
     background: url("../images/login-bgImage.png") center no-repeat;
     background-size: cover;
 }
 .forms-wrapper {
-
     padding: 5rem;
     position: relative;
     top: calc(50% - 50rem);

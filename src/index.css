@@ -10,10 +10,7 @@ html {
     font-size: 62.5%;
 }
 
-body {
-    width: 100%;
 
-}
 
 h1 {
     font-size: 3rem;
@@ -52,10 +49,5 @@ nav.navbar {
     margin: 0.5rem;
 }
 
-.nav-link:hover {
-    font-size: 2rem;
-    box-shadow: 0.1rem 0.1rem 0.2rem #000, 
-    0.1rem 0.1rem 0.2rem #000;
-}
 
 

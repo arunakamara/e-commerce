@@ -1,20 +1,130 @@
 nav {
-    width:  100%;
-    margin-top: 0;
-    background-color:cornflowerblue;
-    position: sticky;
-    top: 0rem;
+  width: 100%;
+  margin: 0;
+  background-color: #fff;
+  position: sticky;
+  top: 0rem;
+}
 
+form {
+  color: #555;
+  background-color: skyblue;
+  display: flex;
+  padding: 0.2rem;
+  border: 0.1rem solid currentColor;
+  border-radius: 0.5rem;
+}
+
+input[type="search"] {
+  border: none;
+  background: #fff;
+  margin: 0;
+  padding: 7px 8px;
+  width: 50rem;
+  height: 4rem;
+  font-size: 2rem;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: inherit;
+}
+
+input[type="search"]::placeholder {
+  color: #bbb;
+}
+
+button.search-btn {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 4rem;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+button.search-btn:hover {
+  opacity: 1;
+  transform: scale(1.5);
 }
 
 #brand.navbar-brand {
-    font-family:'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0 1rem;
+  margin: 0 3rem;
+  color: #fff;
+  background-image: linear-gradient(to right, cyan, pink, blue);
 }
 
+i.fa-sign-in {
+  margin: 0 1rem 0 3rem;
+  font-size: 3.5rem;
+  color: blue;
+}
 
+i.fa-sign-in:hover {
+  transform: scale(1.5);
+  color: darkblue;
+}
 
+span.lg {
+  font-size: 1.2rem;
+}
 
+div.category {
+  display: flex;
+  height: 4rem;
+}
 
-   
+div.category div {
+  margin: 0 1rem;
+  background-color: #fff;
+  display: flex;
+  box-shadow: 0.1rem 0.1rem 0.5rem #eee, 0.1rem 0.1rem 0.5rem #eee;
+}
+
+div.category div:hover {
+  cursor: pointer;
+  border: 0.1rem solid #ccc;
+}
+
+div.category span {
+  font-size: 1.2rem;
+  margin: auto;
+  text-align: center;
+  padding: 0.3rem;
+}
+
+div.category div.selected {
+  background-color: skyblue;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+  #brand.navbar-brand {
+    font-size: 1.5rem;
+    margin: 1.5rem auto;
+  }
+
+  form {
+    width: 30rem;
+    margin: 1rem auto;
+  }
+
+  input[type="search"] {
+    padding: 0.3rem 0.5rem;
+    max-width: 30rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .category {
+    display: none;
+  }
+}
