@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "./CartSlice";
 // import axios from "axios";
+import { setShowCategory } from "./categorySelectedSlice";
 import { getProducts, getCategories } from "../fakeStore";
 import withNavigateHook from "./hoc/withNavigateHook";
 import "./productList.css";
-import Footer from "./Footer";
 
 function ProductList(props) {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
   const cartCount = useSelector((state) => state.cart.items.length);
+  const searchQuery = useSelector((state) => state.searchedQuery.queries);
   const [addedToCart, setAddedToCart] = useState([]);
   const selectedCategory = useSelector(
     (state) => state.categorySelected.selectedCategory
@@ -25,11 +26,13 @@ function ProductList(props) {
   }, []);
 
   const handleToRegister = () => {
+    dispatch(setShowCategory(false));
     props.navigation("/register");
   };
 
   const handleCartClick = (e) => {
     e.preventDefault();
+    dispatch(setShowCategory(false));
     props.navigation("/cart");
   };
 
@@ -42,11 +45,22 @@ function ProductList(props) {
     return addedToCart.find((p) => p.id === product.id);
   };
 
-  const filteredProducts =
-    selectedCategory !== "All Category"
-      ? products.filter((product) => product.category === selectedCategory)
-      : products;
+  let filteredProducts = products;
+  if (searchQuery) {
+    filteredProducts = products.filter((product) =>
+      product.title.toLowerCase().startsWith(searchQuery.toLowerCase())
+    );
+  } else if (selectedCategory !== "All Category") {
+    filteredProducts = products.filter(
+      (product) => product.category === selectedCategory
+    );
+  }
 
+  // const filteredProducts =
+  //   selectedCategory !== "All Category"
+  //     ? products.filter((product) => product.category === selectedCategory)
+  //     : products;
+  dispatch(setShowCategory(true));
   return (
     <div className="container">
       <header className="product-list-heading">
@@ -88,7 +102,6 @@ function ProductList(props) {
         </button>
         <hr />
       </div>
-      
     </div>
   );
 }

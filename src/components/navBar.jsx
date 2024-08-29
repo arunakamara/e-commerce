@@ -3,11 +3,16 @@ import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../fakeStore";
 import { setSelectedCategory } from "./categorySelectedSlice";
+import { setSearchQuery } from "./searchQuerySlice";
 import "./navBar.css";
 
 function NavBar(props) {
   const selectedCategory = useSelector(
     (state) => state.categorySelected.selectedCategory
+  );
+  const searchQuery = useSelector((state) => state.searchedQuery.queries);
+  const showCategory = useSelector(
+    (state) => state.categorySelected.showCategory
   );
   const dispatch = useDispatch();
   const [categories, setCategories] = useState([]);
@@ -18,6 +23,12 @@ function NavBar(props) {
 
   const handleSelectedCategory = (category) => {
     dispatch(setSelectedCategory(category));
+    dispatch(setSearchQuery(""));
+  };
+
+  const handleSearch = (query) => {
+    dispatch(setSearchQuery(query));
+    dispatch(setSelectedCategory(null));
   };
 
   return (
@@ -31,13 +42,15 @@ function NavBar(props) {
           <input
             className="form-control me-2"
             type="search"
-            placeholder="Search"
+            placeholder="Search..."
             aria-label="Search"
+            value={searchQuery}
+            onChange={(e) => handleSearch(e.currentTarget.value)}
           />
           <button className="search-btn" type="submit"></button>
         </form>
 
-        <div className="category">
+        {showCategory && <div className="category">
           {categories.map((category) => (
             <div
               key={category}
@@ -51,16 +64,14 @@ function NavBar(props) {
               <span>{category}</span>
             </div>
           ))}
-        </div>
+        </div>}
 
         <div className="navbar-nav">
-         
           <NavLink className="nav-link" to="/login">
             <i className="fa fa-sign-in">
               <span className="lg">Login</span>
             </i>
           </NavLink>
-          
         </div>
       </div>
     </nav>

@@ -18,7 +18,6 @@ class LoginForm extends Form {
   
 
   doSubmit = () => {
-    console.log("Submitted");
 
     //logic for authentication
 

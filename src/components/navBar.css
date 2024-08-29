@@ -1,12 +1,12 @@
 nav {
-  width: 100%;
   margin: 0;
   background-color: #fff;
   position: sticky;
   top: 0rem;
 }
 
-form {
+form.d-flex {
+  width: 40%;
   color: #555;
   background-color: skyblue;
   display: flex;
@@ -20,7 +20,7 @@ input[type="search"] {
   background: #fff;
   margin: 0;
   padding: 7px 8px;
-  width: 50rem;
+  width: 90%;
   height: 4rem;
   font-size: 2rem;
   color: #fff;
@@ -59,6 +59,8 @@ button.search-btn:hover {
   color: #fff;
   background-image: linear-gradient(to right, cyan, pink, blue);
 }
+
+
 
 i.fa-sign-in {
   margin: 0 1rem 0 3rem;
@@ -124,7 +126,7 @@ div.category div.selected {
     font-size: 1.5rem;
   }
 
-  .category {
+  div.category {
     display: none;
   }
 }

@@ -4,6 +4,8 @@ import withNavigateHook from "./hoc/withNavigateHook";
 import Form from "./common/form";
 import "./loginForm.css";
 
+
+
 class Register extends Form {
   state = {
     data: { name: "", email: "", password: "", confirmPassword: "" },
@@ -21,10 +23,8 @@ class Register extends Form {
   };
 
   doSubmit = () => {
-    console.log("Registerd");
-
     //logic for authentication
-    this.props.navigation("/", { replace: "true" });
+    this.props.navigation("/");
   };
 
   render() {
