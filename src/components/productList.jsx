@@ -25,6 +25,10 @@ function ProductList(props) {
     setProducts(getProducts());
   }, []);
 
+  useEffect(() => {
+      dispatch(setShowCategory(true));
+  })
+
   const handleToRegister = () => {
     dispatch(setShowCategory(false));
     props.navigation("/register");
@@ -60,7 +64,6 @@ function ProductList(props) {
   //   selectedCategory !== "All Category"
   //     ? products.filter((product) => product.category === selectedCategory)
   //     : products;
-  dispatch(setShowCategory(true));
   return (
     <div className="container">
       <header className="product-list-heading">
@@ -92,7 +95,7 @@ function ProductList(props) {
           </div>
         ))}
       </div>
-      <div>
+      <div className="f1">
         <hr />
         <p className="btn-text">
           To see personalized recommendations, create an account

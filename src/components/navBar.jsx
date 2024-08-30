@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../fakeStore";
 import { setSelectedCategory } from "./categorySelectedSlice";
 import { setSearchQuery } from "./searchQuerySlice";
+import { setShowCategory } from "./categorySelectedSlice";
 import "./navBar.css";
 
 function NavBar(props) {
@@ -50,25 +51,30 @@ function NavBar(props) {
           <button className="search-btn" type="submit"></button>
         </form>
 
-        {showCategory && <div className="category">
-          {categories.map((category) => (
-            <div
-              key={category}
-              onClick={() => handleSelectedCategory(category)}
-              className={
-                category === selectedCategory
-                  ? category + " selected"
-                  : category
-              }
-            >
-              <span>{category}</span>
-            </div>
-          ))}
-        </div>}
+        {showCategory && (
+          <div className="category">
+            {categories.map((category) => (
+              <div
+                key={category}
+                onClick={() => handleSelectedCategory(category)}
+                className={
+                  category === selectedCategory
+                    ? category + " selected"
+                    : category
+                }
+              >
+                <span>{category}</span>
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="navbar-nav">
           <NavLink className="nav-link" to="/login">
-            <i className="fa fa-sign-in">
+            <i
+              className="fa fa-sign-in"
+              onClick={() => dispatch(setShowCategory(false))}
+            >
               <span className="lg">Login</span>
             </i>
           </NavLink>

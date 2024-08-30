@@ -1,6 +1,6 @@
 nav {
   margin: 0;
-  background-color: #fff;
+  background-color: #13717b;
   position: sticky;
   top: 0rem;
 }
@@ -65,12 +65,12 @@ button.search-btn:hover {
 i.fa-sign-in {
   margin: 0 1rem 0 3rem;
   font-size: 3.5rem;
-  color: blue;
+  color:aquamarine;
 }
 
 i.fa-sign-in:hover {
   transform: scale(1.5);
-  color: darkblue;
+  color: aqua;
 }
 
 span.lg {
@@ -86,7 +86,8 @@ div.category div {
   margin: 0 1rem;
   background-color: #fff;
   display: flex;
-  box-shadow: 0.1rem 0.1rem 0.5rem #eee, 0.1rem 0.1rem 0.5rem #eee;
+  border-radius: 1.8rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem #000, 0.1rem 0.1rem 0.5rem #000;
 }
 
 div.category div:hover {
