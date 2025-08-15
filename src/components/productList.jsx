@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "./CartSlice";
-// import axios from "axios";
+import axios from "axios";
 import { setShowCategory } from "./categorySelectedSlice";
-import { getProducts, getCategories } from "../fakeStore";
+// import { getProducts, getCategories } from "../fakeStore";
 import withNavigateHook from "./hoc/withNavigateHook";
 import "./productList.css";
 
@@ -16,13 +16,13 @@ function ProductList(props) {
   const selectedCategory = useSelector(
     (state) => state.categorySelected.selectedCategory
   );
-  useEffect(() => {
-    // async function getProducts() {
-    //   const { data } = await axios.get("https://fakestoreapi.com/products");
-    //   setProducts(data);
-    // }
-    // getProducts();
-    setProducts(getProducts());
+  useEffect( () => {
+    async function getProducts() {
+      const { data } = await axios.get("https://fakestoreapi.com/products");
+      setProducts(data);
+    }
+    getProducts();
+    // setProducts(getProducts());
   }, []);
 
   useEffect(() => {
