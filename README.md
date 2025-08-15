@@ -1,6 +1,6 @@
 # 🛍️ E-Commerce Web Application
 
-An interactive and responsive e-commerce platform built with **React.js**, **Node.js**, **Express.js**, and **MongoDB**.  
+An interactive and responsive e-commerce platform built with **React.js**.
 The application provides users with a smooth online shopping experience, including product browsing, cart management, checkout, and authentication.
 
 ---
