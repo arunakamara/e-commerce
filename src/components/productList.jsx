@@ -16,14 +16,29 @@ function ProductList(props) {
   const selectedCategory = useSelector(
     (state) => state.categorySelected.selectedCategory
   );
-  useEffect( () => {
-    async function getProducts() {
-      const { data } = await axios.get("https://fakestoreapi.com/products");
-      setProducts(data);
-    }
-    getProducts();
-    // setProducts(getProducts());
-  }, []);
+  // useEffect( () => {
+  //   async function getProducts() {
+  //     const { data } = await axios.get("https://fakestoreapi.com/products");
+  //     setProducts(data);
+  //   }
+  //   getProducts();
+  //   // setProducts(getProducts());
+  // }, []);
+
+  useEffect(() => {
+  async function getProducts() {
+    const { data } = await axios.get("https://fakestoreapi.com/products");
+
+    const localData = data.map((product, index) => ({
+      ...product,
+      image: `/images/product_${index + 1}.jpg` 
+    }));
+
+    setProducts(localData);
+  }
+  getProducts();
+}, []);
+
 
   useEffect(() => {
       dispatch(setShowCategory(true));
