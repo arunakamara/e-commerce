@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "./CartSlice";
 import axios from "axios";
+import productImgs from "../assets/product_1.jpg"
 import { setShowCategory } from "./categorySelectedSlice";
 // import { getProducts, getCategories } from "../fakeStore";
 import withNavigateHook from "./hoc/withNavigateHook";
@@ -21,13 +22,7 @@ function ProductList(props) {
   async function getProducts() {
     const { data } = await axios.get("https://fakestoreapi.com/products");
 
-    const localData = data.map((product, index) => ({
-      ...product,
-      image: `/product_${index + 1}.jpg` 
-    }));
-
-    setProducts(localData);
-    console.log(localData)
+    setProducts(data);
   }
   getProducts();
 }, []);
