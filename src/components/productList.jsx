@@ -23,7 +23,7 @@ function ProductList(props) {
 
     const localData = data.map((product, index) => ({
       ...product,
-      image: `${import.meta.env.BASE_URL}/product_${index + 1}.jpg` 
+      image: `public/product_${index + 1}.jpg` 
     }));
 
     setProducts(localData);
