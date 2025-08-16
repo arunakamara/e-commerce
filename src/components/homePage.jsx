@@ -1,4 +1,3 @@
-import React from "react";
 import withNavigateHook from './hoc/withNavigateHook';
 import "./homePage.css";
 

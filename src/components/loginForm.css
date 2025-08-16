@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: .8rem 1.2rem;
-    background: url("../images/login-bgImage.png") center no-repeat;
+    background: url("./login-bgImage.png") center no-repeat;
     background-size: cover;
 }
 .forms-wrapper {
