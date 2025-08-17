@@ -3,7 +3,7 @@ div.cart-container {
     width: 100%;
     min-height: 100vh;
     margin: 0;
-    background: url("src/assets/homePage-bgImage.jpeg") center no-repeat;
+    background: url("/homePage-bgImage.jpeg") center no-repeat;
     background-size: cover;
 }
 

@@ -22,7 +22,7 @@ function ProductList(props) {
     const { data } = await axios.get("https://fakestoreapi.com/products");
 
     let localData = [ ...data ];
-    localData = localData.map((dataObj, index) => ({...dataObj, image: `src/assets/product_${index + 1}.jpg`}))
+    localData = localData.map((dataObj, index) => ({...dataObj, image: `./product_${index + 1}.jpg`}))
 
     console.log(localData)
     setProducts(localData);
