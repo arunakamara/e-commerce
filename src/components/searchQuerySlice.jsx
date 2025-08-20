@@ -9,7 +9,6 @@ export const searchQuerySlice = createSlice({
     setSearchQuery: (state, action) => {
         const query = action.payload;
         state.queries = query;
-        console.log(query)
     }
   },
 });
