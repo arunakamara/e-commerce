@@ -13,27 +13,29 @@ function ProductList(props) {
   const cartCount = useSelector((state) => state.cart.items.length);
   const searchQuery = useSelector((state) => state.searchedQuery.queries);
   const [addedToCart, setAddedToCart] = useState([]);
+  // const [filteredProducts, setFilteredProducts] = useState(products);
   const selectedCategory = useSelector(
     (state) => state.categorySelected.selectedCategory
   );
 
   useEffect(() => {
-  async function getProducts() {
-    const { data } = await axios.get("https://fakestoreapi.com/products");
+    async function getProducts() {
+      const { data } = await axios.get("https://fakestoreapi.com/products");
 
-    let localData = [ ...data ];
-    localData = localData.map((dataObj, index) => ({...dataObj, image: `./product_${index + 1}.jpg`}))
+      let localData = [...data];
+      localData = localData.map((dataObj, index) => ({
+        ...dataObj,
+        image: `./product_${index + 1}.jpg`,
+      }));
 
-    console.log(localData)
-    setProducts(localData);
-  }
-  getProducts();
-}, []);
-
+      setProducts(localData);
+    }
+    getProducts();
+  }, []);
 
   useEffect(() => {
-      dispatch(setShowCategory(true));
-  })
+    dispatch(setShowCategory(true));
+  });
 
   const handleToRegister = () => {
     dispatch(setShowCategory(false));
@@ -60,6 +62,8 @@ function ProductList(props) {
     filteredProducts = products.filter((product) =>
       product.title.toLowerCase().startsWith(searchQuery.toLowerCase())
     );
+  } else if (searchQuery === "") {
+    filteredProducts === products;
   } else if (selectedCategory !== "All Category") {
     filteredProducts = products.filter(
       (product) => product.category === selectedCategory
